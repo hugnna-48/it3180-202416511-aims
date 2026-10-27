@@ -1,0 +1,1 @@
+print("Total cost: 63.89 $")
