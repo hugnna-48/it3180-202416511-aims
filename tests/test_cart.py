@@ -11,3 +11,15 @@ class TestCart(unittest.TestCase):
 
         # Thêm đĩa thứ 21 (phải thất bại và trả về False)
         self.assertFalse(cart.add_dvd(DigitalVideoDisc("DVD 21")))
+
+    # --- BÀI TEST MỚI THÊM ---
+    def test_discount_calculation(self):
+        cart = Cart()
+        cart.add_dvd(DigitalVideoDisc("Test DVD", cost=100.0))
+        
+        # 100$ giảm 20% phải trả về 80.0$
+        self.assertEqual(cart.total_cost_with_discount(20), 80.0)
+        
+        # Kiểm tra bắt lỗi: percent > 100 phải văng lỗi ValueError
+        with self.assertRaises(ValueError):
+            cart.total_cost_with_discount(150)
