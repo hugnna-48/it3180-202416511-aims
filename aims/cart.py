@@ -1,6 +1,5 @@
 MAX_NUMBERS_ORDERED = 20
 
-
 class Cart:
     """Giỏ hàng chứa tối đa MAX_NUMBERS_ORDERED đĩa DVD."""
 
@@ -25,3 +24,17 @@ class Cart:
 
     def total_cost(self):
         return sum(item.cost for item in self.items)
+
+    # --- ĐOẠN CODE THÊM MỚI CHO TÍNH NĂNG PRINT CART ---
+    def print_cart(self):
+        if not self.items:
+            print("The cart is empty")
+            return
+
+        print("***********************CART***********************")
+        print("Ordered Items:")
+        for i, item in enumerate(self.items, 1):
+            # Giả định DigitalVideoDisc có các thuộc tính: title, category, director, length, cost
+            print(f"{i}. DVD - {item.title} - {item.cost} $")
+        print(f"Total cost: {self.total_cost():.2f} $")
+        print("***************************************************")
