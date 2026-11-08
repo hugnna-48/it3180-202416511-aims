@@ -38,3 +38,8 @@ class Cart:
             print(f"{i}. DVD - {item.title} - {item.cost} $")
         print(f"Total cost: {self.total_cost():.2f} $")
         print("***************************************************")
+
+    # --- TÍNH NĂNG ĐANG LÀM DỞ VÀ BỊ LỖI ---
+    def total_cost_with_discount(self, percent):
+        # LỖI: Công thức này tính ra số tiền được trừ đi, không phải tổng tiền cần thanh toán
+        return self.total_cost() * percent / 100
