@@ -47,3 +47,9 @@ class Cart:
         
         total = self.total_cost()
         return total * (1 - percent / 100)
+
+    def sort_by_title(self):
+        return sorted(self.items, key=lambda d: d.title.lower())
+
+    def sort_by_cost(self):
+        return sorted(self.items, key=lambda d: d.cost)

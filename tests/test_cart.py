@@ -23,3 +23,9 @@ class TestCart(unittest.TestCase):
         # Kiểm tra bắt lỗi: percent > 100 phải văng lỗi ValueError
         with self.assertRaises(ValueError):
             cart.total_cost_with_discount(150)
+
+    # tests/test_cart.py (thêm test)
+    def test_sort_by_title(self):
+        ...
+    def test_sort_by_cost(self):
+        ...
