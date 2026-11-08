@@ -39,7 +39,10 @@ class Cart:
         print(f"Total cost: {self.total_cost():.2f} $")
         print("***************************************************")
 
-    # --- TÍNH NĂNG ĐANG LÀM DỞ VÀ BỊ LỖI ---
+    # --- ĐOẠN CODE ĐÃ ĐƯỢC SỬA LỖI ---
     def total_cost_with_discount(self, percent):
-        # LỖI: Công thức này tính ra số tiền được trừ đi, không phải tổng tiền cần thanh toán
-        return self.total_cost() * percent / 100
+        if percent < 0 or percent > 100:
+            raise ValueError("Phần trăm giảm giá phải từ 0 đến 100")
+        
+        total = self.total_cost()
+        return total * (1 - percent / 100)
